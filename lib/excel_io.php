@@ -9,24 +9,18 @@ class excel_io {
 		$tmpnum = $tmpnum - 1;
 		if ($tmparray[$tmpnum] == 'xls') {
 			$objReader = PHPExcel_IOFactory::createReader('Excel5');
-			//use Excel5 for 2003 format
 			$excelpath = $path . $_f;
 			$objPHPExcel = $objReader -> load($excelpath);
 			$sheet = $objPHPExcel -> getSheet(0);
 			$highestRow = $sheet -> getHighestRow();
-			//取得总行数
 			$highestColumn = $sheet -> getHighestColumn();
-			//取得总列数
 		} else {
 			$objReader = PHPExcel_IOFactory::createReader('Excel2007');
-			//use Excel5 for 2003 format
-			$excelpath = "./upload/" . $_f;
+			$excelpath = $path . $_f;
 			$objPHPExcel = $objReader -> load($excelpath);
 			$sheet = $objPHPExcel -> getSheet(0);
 			$highestRow = $sheet -> getHighestRow();
-			//取得总行数
 			$highestColumn = $sheet -> getHighestColumn();
-			//取得总列数
 		}
 		$data = array();
 		for ($j = 1; $j <= $highestRow; $j++)//从第二行开始读取数据
@@ -41,8 +35,6 @@ class excel_io {
 			//根据自己编码修改
 			$strs = explode("|*|", $str);
 			$data[$j] = $strs;
-			// echo $str . "<br />";
-			//$sql = "insert into u_ip (user,nam,rom_num,ip,mac) values ('{$strs[0]}','{$strs[1]}','{$strs[2]}','{$strs[3]}','{$strs[4]}')";
 		}
 		return $data;
 	}

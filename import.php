@@ -20,7 +20,7 @@ if(isset($_SESSION['uid'])){
 	    $r_=$db->db_query_n1('list', 'listname', $_POST['listname']);
 		$w[0]['new']=0;
 		$w[0]['exist']=0;
-	    for($i=1;$i<count($arr);$i++){
+	    for($i=1;$i<=count($arr);$i++){
 	    	$r=$db->db_query_normal('person',array('name','tel'), array($arr[$i][0],$arr[$i][2]), array('=','='), array('AND'));
 			if(count($r)){//检测这个人是否已经exist。。。
 			$w[0]['exist']++;
