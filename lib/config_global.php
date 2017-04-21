@@ -36,11 +36,11 @@ $memcache_port='11211';
 $memcached_serv='';
 $memcached_port='';
 /*****************微信SDK开发相关设置*****************************/
-$wechat_appid='wx87e3e4e88fcb5987';
-$wechat_appscert='21833067996230cefdcc8cb859bcbe26';
+$wechat_appid='';
+$wechat_appscert='';
 $wechat_base_access_token_proxy="";
 $wechat_proxy_key="";
-$wechat_redirect="http://u.zhbit.com/ckb/index.php";
+$wechat_redirect="";
 $wechat_mch='';
 $wechat_notify_url=''; 
 $wechat_pay_key='';
@@ -104,6 +104,6 @@ $mysql_read_server[0]['usr']='';
 $mysql_read_server[0]['pwd']='';
 $mysql_read_server[0]['nam']='';
 /**************短信设置********************/
-$sms_usr='lantaifeng';
-$sms_pwd='lantaifeng123';
+$sms_usr='';
+$sms_pwd='';
 ?>
